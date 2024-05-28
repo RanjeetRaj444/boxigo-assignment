@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import MyMoves from "../pages/MyMoves.jsx";
 import Profile from "../pages/Profile.jsx";
 import Quote from "../pages/Quote.jsx";
+// import SinglePage from "./SinglePage.jsx";
 
 const Routing = () => {
 	return (

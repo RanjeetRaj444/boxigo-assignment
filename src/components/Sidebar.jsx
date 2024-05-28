@@ -2,6 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/sidebar.css";
 import { DIV } from "../styled-components/navlink";
+import { RiLogoutCircleLine } from "react-icons/ri";
+import { AiOutlineSchedule } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
+import { TbTruckDelivery } from "react-icons/tb";
 
 const Sidebar = () => {
 	return (
@@ -12,7 +16,9 @@ const Sidebar = () => {
 					isPending ? "pending" : isActive ? "active" : "pending"
 				}
 			>
-				<DIV>MY MOVES</DIV>
+				<DIV>
+					<TbTruckDelivery /> MY MOVES
+				</DIV>
 			</NavLink>
 			<NavLink
 				to={"/profile"}
@@ -20,7 +26,9 @@ const Sidebar = () => {
 					isPending ? "pending" : isActive ? "active" : "pending"
 				}
 			>
-				<DIV>MY PROFILE</DIV>
+				<DIV>
+					<CgProfile /> MY PROFILE
+				</DIV>
 			</NavLink>
 			<NavLink
 				to={"/quote"}
@@ -28,7 +36,9 @@ const Sidebar = () => {
 					isPending ? "pending" : isActive ? "active" : "pending"
 				}
 			>
-				<DIV>GET QUOTE</DIV>
+				<DIV>
+					<AiOutlineSchedule /> GET QUOTE
+				</DIV>
 			</NavLink>
 			<NavLink
 				to={"/logout"}
@@ -36,7 +46,9 @@ const Sidebar = () => {
 					isPending ? "pending" : isActive ? "active" : "pending"
 				}
 			>
-				<DIV>LOGOUT</DIV>
+				<DIV>
+					<RiLogoutCircleLine /> LOGOUT
+				</DIV>
 			</NavLink>
 		</div>
 	);
