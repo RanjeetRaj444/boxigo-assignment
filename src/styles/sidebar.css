@@ -1,0 +1,13 @@
+.sidebar-container > a {
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
+}
+
+.active > div {
+	border-left: 4px solid #ec5642;
+}
+
+.pending > div {
+	border-left: 4px solid white;
+}
