@@ -14,6 +14,7 @@ function App() {
 					<ChakraProvider>
 						<DrawerExample />
 					</ChakraProvider>
+					<h1>BOXIGO</h1>
 				</div>
 				<Routing />
 			</div>

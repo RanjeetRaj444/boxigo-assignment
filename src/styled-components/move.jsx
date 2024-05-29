@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 export const DIV = styled.div`
 	border-bottom: 1px solid #d1cccb;
+	padding: 1rem 0rem;
 	/*-----------------$$$$$$$$$$--------------*/
 	.top-section {
 		display: flex;
 		justify-content: space-between;
 		padding: 0.5rem;
+	}
+	.moving-from {
+		text-align: left;
+	}
+	.expand {
+		width: 50%;
 	}
 	.top-section :nth-child(2) > div {
 		padding: 0.4rem;
@@ -20,7 +27,7 @@ export const DIV = styled.div`
 		display: flex;
 		/* justify-content: center; */
 		align-items: center;
-		text-align: center;
+		/* text-align: center; */
 	}
 	.top-section :nth-child(4) {
 		width: 10%;
@@ -227,7 +234,7 @@ export const DIV = styled.div`
 
 	/*--------------Adtional details-----------*/
 
-	.show{
+	.show {
 		display: none;
 	}
 	.expand-detail-top-section {
@@ -252,5 +259,50 @@ export const DIV = styled.div`
 	.details-oldHouse-container {
 		display: flex;
 		gap: 10rem;
+	}
+
+	@media screen and (max-width: 1150px) {
+		.top-section :nth-child(4) {
+			width: 20%;
+		}
+	}
+	@media screen and (max-width: 926px) {
+	}
+	@media screen and (max-width: 776px) {
+		.mid-btn-container > button {
+			padding: 0.3rem 0.7rem;
+		}
+	}
+	@media screen and (max-width: 645px) {
+		.middle-section > div {
+			display: flex;
+			flex-direction: column;
+			gap: 0.4rem;
+		}
+		.bottom-section,
+		.inventory-details,
+		.house-detail-container {
+			font-size: small;
+			width: 100%;
+		}
+		.details-oldHouse-container {
+			gap: 5rem;
+		}
+	}
+	@media screen and (max-width: 464px) {
+		.middle-section {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-gap: 1rem;
+		}
+		.details-oldHouse-container {
+			gap: 2.5rem;
+		}
+		.top-section :nth-child(4) {
+			width: 30%;
+		}
+		.expand {
+			width: 100%;
+		}
 	}
 `;

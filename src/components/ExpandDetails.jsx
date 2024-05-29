@@ -52,8 +52,8 @@ const ExpandDetails = ({ element }) => {
 								// setTotal(prev=>prev*item.items.length)
 								return (
 									<div key={index} style={{ display: "flex" }}>
-										<TableContainer>
-											<Table variant="simple">
+										<TableContainer className="table">
+											<Table variant="unstyled">
 												<Thead>
 													<Tr>
 														<Th>{item.displayName}</Th>
@@ -104,5 +104,16 @@ const DIV = styled.div`
 		/* display: grid;
         grid-template-columns: auto ; */
 		overflow: auto;
+	}
+	@media screen and (max-width: 645px) {
+		.table {
+			font-size: small;
+		}
+		.chakra-accordion__panel {
+			max-height: 40vh;
+			display: grid;
+			grid-template-columns: auto;
+			grid-gap: 2rem;
+		}
 	}
 `;

@@ -37,18 +37,13 @@ const Moves = ({ ele }) => {
 					<p
 						style={{
 							width: !show ? "50%" : "100%",
-							textAlign: !show ? "left" : "",
+							textAlign: "left",
 						}}
 						className="heading-moves"
 					>
 						From
 					</p>
-					<p
-						style={{
-							width: !show ? "50%" : "100%",
-							textAlign: !show ? "left" : "",
-						}}
-					>
+					<p className={!show ? "moving-from expand" : "moving-from"}>
 						{!show ? ele.moving_from : movingFrom}
 					</p>
 				</div>
@@ -59,12 +54,7 @@ const Moves = ({ ele }) => {
 				</div>
 				<div className="top-child">
 					<p className="heading-moves">To</p>
-					<p
-						style={{
-							width: !show ? "50%" : "100%",
-							textAlign: !show ? "left" : "",
-						}}
-					>
+					<p className={!show ? "moving-from expand" : "moving-from"}>
 						{!show ? ele.moving_to : movingto}
 					</p>
 				</div>
@@ -109,7 +99,7 @@ const Moves = ({ ele }) => {
 				</div>
 				<div className="mid-btn-container">
 					<button onClick={handleExpand} className="view-more">
-						View more details
+						View {!show ? "less" : "more"} details
 					</button>
 
 					<button className="Quotes">Quotes Awating</button>

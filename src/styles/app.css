@@ -5,7 +5,7 @@
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .App {
-	padding: 1rem;
+	padding: 1rem 0.5rem;
 	display: flex;
 	justify-content: space-between;
 }
@@ -20,18 +20,38 @@
 	width: 80%;
 	/* text-align: center; */
 }
-.drawer{
+.drawer {
 	display: none;
 }
-@media screen and (max-width:1050px) {
+.drawer > h1 {
+	font-weight: bolder;
+}
+@media screen and (max-width: 1050px) {
 	#sidebar {
 		display: none;
 	}
-	.drawer{
-		display: block;
+	.drawer {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 	}
+
 	#pages {
 		width: 100%;
 		/* text-align: center; */
+	}
+	.top-section :nth-child(4) {
+		width: 20%;
+	}
+}
+
+@media screen and (max-width: 776px) {
+	.middle-section > div > h3,
+	.moving-to,
+	.moves-code,
+	.heading-moves,
+	.mid-btn-container > button,
+	.moving-from {
+		font-size: small;
 	}
 }
