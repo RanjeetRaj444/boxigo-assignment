@@ -2,7 +2,7 @@
 
 - Description :- A web page which shows details about service for changing place from one to another.
 
-:-- 
+:--
 
 ## TechStack
 
@@ -12,6 +12,7 @@
 - HTML
 - CSS
 - JavaScript
+- Styled component
 
 ## Landing Page
 
