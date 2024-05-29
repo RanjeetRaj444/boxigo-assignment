@@ -216,7 +216,7 @@ export const DIV = styled.div`
 	}
 	.mid-btn-container > button {
 		padding: 0.5rem 1rem;
-		border-radius: 0.2rem;
+		border-radius: 0.5rem;
 	}
 	/*-----------------****************-------------*/
 	.bottom-section {
@@ -261,6 +261,44 @@ export const DIV = styled.div`
 		gap: 10rem;
 	}
 
+	@keyframes fadeInUp {
+		from {
+			transform: translate3d(0, -40px, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes fadeInUp {
+		from {
+			transform: translate3d(0, -40px, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+			opacity: 1;
+		}
+	}
+
+	.animated {
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+	}
+
+	.animatedFadeInUp {
+		opacity: 0;
+	}
+
+	.fadeInUp {
+		opacity: 0;
+		animation-name: fadeInUp;
+		-webkit-animation-name: fadeInUp;
+	}
 	@media screen and (max-width: 1150px) {
 		.top-section :nth-child(4) {
 			width: 20%;

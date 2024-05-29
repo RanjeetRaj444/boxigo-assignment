@@ -14,7 +14,7 @@ const MyMoves = () => {
 	return (
 		<div>
 			<div className="headers">
-				<h2>MyMoves</h2>
+				<h1>MyMoves</h1>
 			</div>
 			<div className="moves-container">
 				{loading ? (

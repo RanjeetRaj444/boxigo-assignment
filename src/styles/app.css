@@ -8,13 +8,16 @@
 	padding: 1rem 0.5rem;
 	display: flex;
 	justify-content: space-between;
+	/* position: absolute; */
 }
 #sidebar {
 	width: 20%;
 	height: 100%;
 	position: sticky;
-	top: 0;
+	top: 80px;
 	z-index: 1;
+	/* position: fixed; */
+	/* left: 0; */
 }
 #pages {
 	width: 80%;
@@ -26,7 +29,32 @@
 .drawer > h1 {
 	font-weight: bolder;
 }
+
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	/* gap: 3rem; */
+	padding: 0px 0.5rem;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: white;
+}
+.nav-links-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0rem 4rem;
+}
+.active-nav {
+	border-bottom: 2px solid #ec5642;
+}
+.pending-nav {
+	border-bottom: 2px solid white;
+}
 @media screen and (max-width: 1050px) {
+	#navbar,
 	#sidebar {
 		display: none;
 	}

@@ -1,6 +1,8 @@
 import axios from "axios";
+import { data2 } from "./data.js";
 
 export function getData(setLoading, seData) {
+	// console.log(data2.Customer_Estimate_Flow, "hello");
 	setLoading(true);
 	axios("http://test.api.boxigo.in/sample-data/")
 		.then((data) => {
@@ -9,7 +11,8 @@ export function getData(setLoading, seData) {
 			setLoading(false);
 		})
 		.catch((error) => {
-			alert("Some thing went wrong.");
+			seData(data2.Customer_Estimate_Flow);
+			alert(error);
 			console.log(error);
 		})
 		.finally(() => {

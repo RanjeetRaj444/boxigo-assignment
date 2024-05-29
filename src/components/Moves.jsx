@@ -114,7 +114,13 @@ const Moves = ({ ele }) => {
 					of shifting.
 				</p>
 			</div>
-			<div className={show ? "expand-details show" : "expand-details"}>
+			<div
+				className={
+					show
+						? "expand-details animatedFadeInUp fadeInUp animated show"
+						: "expand-details animatedFadeInUp fadeInUp animated"
+				}
+			>
 				<div className="expand-detail-top-section">
 					<div>
 						<h2>Addtional Information</h2>
