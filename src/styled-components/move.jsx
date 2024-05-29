@@ -227,6 +227,9 @@ export const DIV = styled.div`
 
 	/*--------------Adtional details-----------*/
 
+	.show{
+		display: none;
+	}
 	.expand-detail-top-section {
 		display: flex;
 		align-items: center;
@@ -238,6 +241,13 @@ export const DIV = styled.div`
 		background-color: black;
 		color: white;
 		border-radius: 0.3rem;
+	}
+	.house-detail-container > div {
+		padding: 1rem 0rem;
+	}
+	.house-detail-container > h3 {
+		color: #ec5642;
+		font-weight: bolder;
 	}
 	.details-oldHouse-container {
 		display: flex;

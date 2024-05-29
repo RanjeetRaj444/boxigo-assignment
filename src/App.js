@@ -1,6 +1,8 @@
 import Routing from "./components/Routes";
 import Sidebar from "./components/Sidebar";
+import { DrawerExample } from "./components/Drawer.jsx";
 import "./styles/app.css";
+import { ChakraProvider } from "@chakra-ui/react";
 function App() {
 	return (
 		<div className="App">
@@ -8,6 +10,11 @@ function App() {
 				<Sidebar />
 			</div>
 			<div id="pages">
+				<div className="drawer">
+					<ChakraProvider>
+						<DrawerExample />
+					</ChakraProvider>
+				</div>
 				<Routing />
 			</div>
 		</div>

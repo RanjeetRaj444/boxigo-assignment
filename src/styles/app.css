@@ -17,6 +17,21 @@
 	z-index: 1;
 }
 #pages {
-	width: 100%;
+	width: 80%;
 	/* text-align: center; */
+}
+.drawer{
+	display: none;
+}
+@media screen and (max-width:1050px) {
+	#sidebar {
+		display: none;
+	}
+	.drawer{
+		display: block;
+	}
+	#pages {
+		width: 100%;
+		/* text-align: center; */
+	}
 }

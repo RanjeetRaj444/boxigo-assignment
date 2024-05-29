@@ -5,28 +5,52 @@ import { DIV } from "../styled-components/move";
 import { MdHome, MdDateRange } from "react-icons/md";
 import { GiVillage, GiPathDistance } from "react-icons/gi";
 import { GrEdit } from "react-icons/gr";
+import ExpandDetails from "./ExpandDetails";
 const Moves = ({ ele }) => {
 	const [movingto, setMovingTO] = useState("");
 	const [movingFrom, setMovingFrom] = useState("");
+	const [show, setShow] = useState(true);
 	// console.log(movingto);
+	function handleExpand() {
+		if (show === false) {
+			setShow(true);
+		} else {
+			setShow(false);
+		}
+	}
 	useEffect(() => {
 		setMovingTO(
-			`${ele.moving_to.split(",")[ele.moving_to.split(",").length - 1]},${
+			`${ele.moving_to.split(",")[ele.moving_to.split(",").length - 3]},${
 				ele.moving_to.split(",")[ele.moving_to.split(",").length - 2]
-			},${ele.moving_to.split(",")[ele.moving_to.split(",").length - 3]}`,
+			},${ele.moving_to.split(",")[ele.moving_to.split(",").length - 1]}`,
 		);
 		setMovingFrom(
-			`${ele.moving_from.split(",")[ele.moving_from.split(",").length - 1]},${
+			`${ele.moving_from.split(",")[ele.moving_from.split(",").length - 3]},${
 				ele.moving_from.split(",")[ele.moving_from.split(",").length - 2]
-			},${ele.moving_from.split(",")[ele.moving_from.split(",").length - 3]}`,
+			},${ele.moving_from.split(",")[ele.moving_from.split(",").length - 1]}`,
 		);
 	}, []);
 	return (
 		<DIV>
 			<div className="top-section">
 				<div className="top-child">
-					<p className="heading-moves">From</p>
-					<p>{movingFrom}</p>
+					<p
+						style={{
+							width: !show ? "50%" : "100%",
+							textAlign: !show ? "left" : "",
+						}}
+						className="heading-moves"
+					>
+						From
+					</p>
+					<p
+						style={{
+							width: !show ? "50%" : "100%",
+							textAlign: !show ? "left" : "",
+						}}
+					>
+						{!show ? ele.moving_from : movingFrom}
+					</p>
 				</div>
 				<div className="top-child">
 					<div>
@@ -35,7 +59,14 @@ const Moves = ({ ele }) => {
 				</div>
 				<div className="top-child">
 					<p className="heading-moves">To</p>
-					<p>{movingto}</p>
+					<p
+						style={{
+							width: !show ? "50%" : "100%",
+							textAlign: !show ? "left" : "",
+						}}
+					>
+						{!show ? ele.moving_to : movingto}
+					</p>
 				</div>
 				<div className="top-child">
 					<p className="heading-moves">Request#</p>
@@ -77,7 +108,9 @@ const Moves = ({ ele }) => {
 					<h3>Is flexible</h3>
 				</div>
 				<div className="mid-btn-container">
-					<button className="view-more">View more details</button>
+					<button onClick={handleExpand} className="view-more">
+						View more details
+					</button>
 
 					<button className="Quotes">Quotes Awating</button>
 				</div>
@@ -91,7 +124,7 @@ const Moves = ({ ele }) => {
 					of shifting.
 				</p>
 			</div>
-			<div className="expand-details">
+			<div className={show ? "expand-details show" : "expand-details"}>
 				<div className="expand-detail-top-section">
 					<div>
 						<h2>Addtional Information</h2>
@@ -125,6 +158,7 @@ const Moves = ({ ele }) => {
 							<p>{ele.old_parking_distance}</p>
 						</div>
 					</div>
+					<h3>New House Details</h3>
 					<div className="details-oldHouse-container">
 						<div>
 							<h4>Floor No.</h4>
@@ -138,6 +172,21 @@ const Moves = ({ ele }) => {
 							<h4>Distance from Elevator / Staircase to truck</h4>
 							<p>{ele.new_parking_distance}</p>
 						</div>
+					</div>
+				</div>
+				<div className="inventory-details">
+					<div className="expand-detail-top-section">
+						<div>
+							<h2>Inventory Details</h2>
+						</div>
+						<div className="left-btn">
+							<h3>Edit Inventory</h3>
+						</div>
+					</div>
+					<div className="inventory-container">
+						{ele.items.inventory.map((element, indde) => (
+							<ExpandDetails key={indde} element={element} />
+						))}
 					</div>
 				</div>
 			</div>
