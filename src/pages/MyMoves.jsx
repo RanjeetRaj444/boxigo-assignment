@@ -26,7 +26,8 @@ const MyMoves = () => {
 						<div className="dot"></div>
 					</section>
 				) : (
-					data.map((ele, ind) => <Moves key={ind} ele={ele} />)
+					data?.length > 0 &&
+					data?.map((ele, ind) => <Moves key={ind} ele={ele} />)
 				)}
 			</div>
 		</div>

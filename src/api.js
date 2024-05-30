@@ -4,8 +4,9 @@ import { data2 } from "./data.js";
 export function getData(setLoading, seData) {
 	// console.log(data2.Customer_Estimate_Flow, "hello");
 	setLoading(true);
-	axios("http://test.api.boxigo.in/sample-data/")
+	axios("/sample-data")
 		.then((data) => {
+			// console.log(data);
 			// console.log(data.data.Customer_Estimate_Flow);
 			seData(data.data.Customer_Estimate_Flow);
 			setLoading(false);
