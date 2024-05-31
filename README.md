@@ -2,7 +2,11 @@
 
 - Description :- A web page which shows details about service for changing place from one to another.
 
-:--
+  - fronted :-- https://boxigo-c3f770.netlify.app/
+  - backend :-- https://boxigo-backend.onrender.com/api/sample-data
+    - github link :- https://github.com/RanjeetRaj444/boxigo_backend
+    - routes :-
+      - /api/sample-data
 
 ## TechStack
 
